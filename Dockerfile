@@ -6,6 +6,7 @@ COPY . .
 RUN npm run build
 
 # Run phase
-FROM nginx
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=react-build /builddir/build /usr/share/nginx/html
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
