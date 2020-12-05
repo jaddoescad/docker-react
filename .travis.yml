@@ -14,4 +14,4 @@ script:
 
 
 script:
-  - docker run -e CI=true stephengrider/docker-react npm run test
+  - docker run -e CI=true jadslim313/docker-react npm run test
